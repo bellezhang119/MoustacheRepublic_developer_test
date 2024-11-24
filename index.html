@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Product Details Section -->
+      <div class="product-details">
+        <img id="product-image" alt="Product Image" />
+        <div class="content">
+          <h2 id="product-title"></h2>
+          <p id="product-description"></p>
+          <p id="product-price"></p>
+          <div id="size-options" class="sizes"></div>
+          <button id="add-to-cart" class="add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- cart-widget Section -->
+      <div class="cart-widget">
+        <button id="cart-toggle">Cart (<span id="cart-count">0</span>)</button>
+        <div id="cart-dropdown" class="cart-dropdown hidden">
+          <ul id="cart-items"></ul>
+          <h3 id="cart-total">Total: $0</h3>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

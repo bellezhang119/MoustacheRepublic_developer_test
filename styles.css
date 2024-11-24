@@ -1,0 +1,171 @@
+/* Define global color variables */
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #28a745;
+  --accent-color: #218838;
+  --dark-color: #1e7e34;
+  --light-color: #fff;
+  --border-color: #ccc;
+  --background-color: #ffffff;
+}
+
+/* General body styles */
+body {
+  font-family: "Roboto Mono", sans-serif;
+  background-color: var(--background-color);
+}
+
+/* General button styles */
+button {
+  font-family: "Roboto Mono", sans-serif;
+}
+
+/* Main container for the app */
+.app {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping of child elements */
+  gap: 20px;
+  padding: 20px;
+  position: relative;
+}
+
+/* Product details container */
+.product-details {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  flex: 1 1 600px; /* Flex-grow, flex-shrink, and base size */
+  align-items: flex-start;
+}
+
+.product-details img {
+  max-width: 400px; /* Limit image width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 5px;
+}
+
+.product-details .content {
+  display: inline-block;
+  flex-direction: column;
+  gap: 15px;
+  flex: 1;
+}
+
+/* Cart toggle button styles */
+#cart-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  border: none;
+  padding: 10px 20px;
+  width: auto;
+  white-space: nowrap; /* Prevent text wrapping */
+  cursor: pointer;
+}
+
+/* Cart dropdown styles */
+.cart-dropdown {
+  position: absolute;
+  top: 70px;
+  right: 0;
+  width: 300px;
+  background-color: var(--light-color);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  z-index: 9999;
+}
+
+.cart-dropdown.active {
+  display: block; /* Show dropdown when active */
+}
+
+.cart-dropdown.hidden {
+  display: none; /* Hide dropdown */
+}
+
+/* Mini cart styles */
+.cart-widget {
+  position: relative;
+  z-index: 1;
+}
+
+.cart-widget ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cart-widget li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cart-widget input {
+  width: 40px; /* Input field for quantity */
+}
+
+/* Sizes button styles */
+.sizes button {
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+}
+
+.sizes button.selected {
+  background-color: var(--primary-color); /* Highlight selected size */
+  color: var(--light-color);
+}
+
+/* Add-to-cart button styles */
+button.add-to-cart {
+  width: auto;
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: var(--light-color);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button.add-to-cart:hover {
+  background-color: var(--accent-color); /* Hover effect */
+}
+
+button.add-to-cart:active {
+  background-color: var(--dark-color); /* Active button effect */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 820px) {
+  .app {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: stretch;
+  }
+
+  #cart-toggle {
+    position: fixed; /* Fix cart button at the top-right corner */
+    top: 10px;
+    right: 10px;
+  }
+
+  .cart-dropdown {
+    position: fixed; /* Fix dropdown position */
+    top: 70px;
+    right: 10px;
+  }
+
+  .product-details {
+    flex-direction: column; /* Stack product details vertically */
+    align-items: flex-start;
+  }
+
+  .product-details img {
+    max-width: 100%; /* Make images responsive */
+  }
+}
